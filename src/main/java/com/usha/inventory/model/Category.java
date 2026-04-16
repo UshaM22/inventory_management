@@ -1,7 +1,6 @@
 package com.usha.inventory.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data

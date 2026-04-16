@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # Service 1: The MySQL Database
+  db:
+    image: mysql:8.0
+    container_name: inventory-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: inventorydb
+      MYSQL_ROOT_PASSWORD: root1234
+    ports:
+      - "3306:3306"
+    healthcheck:
+        test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot1234" ]
+        interval: 5s
+        timeout: 5s
+        retries: 10
+
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # Service 2: Java Spring Boot App
+  app:
+    build: .
+    container_name: inventory-app-service
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # This matches the 'db' service name above!
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/inventorydb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root1234
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+
+      SPRING_JPA_SHOW_SQL: "true"
+
+
+volumes:
+  db_data:
