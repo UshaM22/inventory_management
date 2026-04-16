@@ -42,7 +42,9 @@ App runs at: `http://localhost:8080`
 
 ## API Documentation
 
-After running the app, open Swagger UI: http://localhost:8080/swagger-ui/index.html
+After running the app, open
+
+Swagger UI: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 
 ## API Endpoints
@@ -76,6 +78,10 @@ After running the app, open Swagger UI: http://localhost:8080/swagger-ui/index.h
 | GET | /api/orders/customer/{name} | Get by customer |
 | GET | /api/orders/status/{status} | Get by status |
 | PUT | /api/orders/{id}/status | Update status |
+
+
+![img.png](img.png)
+
 
 ## Running Tests
 
