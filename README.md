@@ -89,6 +89,10 @@ Swagger UI: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/
 mvn test
 ```
 
+## Live Demo
+API: https://inventory-management-opom.onrender.com
+Swagger UI: https://inventory-management-opom.onrender.com/swagger-ui/index.html
+
 ## Author
 
 Backend Developer — Berlin, Germany
