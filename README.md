@@ -93,6 +93,8 @@ mvn test
 API: https://inventory-management-opom.onrender.com
 Swagger UI: https://inventory-management-opom.onrender.com/swagger-ui/index.html
 
+## Note: Free tier — app may take 30-50 seconds to wake up on first request.
+
 ## Author
 
 Backend Developer — Berlin, Germany
