@@ -35,7 +35,7 @@ public class CategoryService {
     }
 
     public void delete(Long id){
-        Category category = categoryRepository.findById(id).orElseThrow(() -> new CategoryNotFoundException("Category not found with id:"));
+        Category category = categoryRepository.findById(id).orElseThrow(() -> new CategoryNotFoundException("Category not found with id:" +id));
         categoryRepository.deleteById(id);
     }
 }
